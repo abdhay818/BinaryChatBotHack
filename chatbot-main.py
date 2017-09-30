@@ -25,7 +25,7 @@ import random
 import logging
 
 logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.DEBUG) # REMEMBER to change when go to public or live
 
 
 """ --- Helpers to build responses which match the structure of the necessary dialog actions --- """
@@ -513,8 +513,10 @@ def dispatch(intent_request):
     raise Exception('Intent with name ' + intent_name + ' not supported')
 
 
+    
+    
 """ --- Main handler --- """
-
+# This is the main entry 
 
 def lambda_handler(event, context):
     """
@@ -522,8 +524,10 @@ def lambda_handler(event, context):
     The JSON body of the request is provided in the event slot.
     """
     # By default, treat the user request as coming from the America/New_York time zone.
+    # Can we change to MY time zone ?? 
     os.environ['TZ'] = 'America/New_York'
     time.tzset()
     logger.debug('event.bot.name={}'.format(event['bot']['name']))
+    logger.debug('Hello Binary Hackathon LexBot...')
 
     return dispatch(event)
