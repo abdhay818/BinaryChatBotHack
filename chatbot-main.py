@@ -141,6 +141,7 @@ def get_random_int(minimum, maximum):
     return random.randint(min_int, max_int - 1)
 
 
+# Simulation of availability date and time
 def get_availabilities(date):
     """
     Helper function which in a full implementation would  feed into a backend API to provide query schedule availability.
